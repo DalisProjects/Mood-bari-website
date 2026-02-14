@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>MOOD Bari Demo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="background-video-container">
+  <video autoplay muted loop playsinline class="background-video">
+    <source src="images/gif.webm" type="video/webm">
+    Your browser does not support the video tag.
+  </video>
+</div>
+<nav>
+  <img src="logo.jpg" alt="logo">
+  <div>
+    <a href="#about">About</a>
+    <a href="#events">Eventi</a>
+    <a href="#menu">Menu</a>
+    <a href="#moods">Gallery</a>
+    <a href="#contact">Contatti</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-content">
+  <h1>MOOD Bari</h1>
+  <p>Caffè, bistrot & cocktail vibes</p>
+  <button onclick="scrollToSection()">Prenota ora</button>
+  </div>
+</div>
+
+<section id="about">
+  <h2>About</h2>
+  <p>
+    Locale moderno a Bari con cocktail, eventi e serate a tema.
+    Perfetto per aperitivi, musica live e momenti chill.
+    Qui puoi mettere storia del bar, filosofia, vibe.
+  </p>
+</section>
+
+<section id="events">
+  <h2>Eventi in evidenza</h2>
+  <div class="events">
+    <div class="card">
+      <h3>DJ Night</h3>
+      <p>Sabato sera - musica e cocktail speciali.</p>
+    </div>
+
+    <div class="card">
+      <h3>Workshop</h3>
+      <p>Eventi creativi settimanali.</p>
+    </div>
+
+    <div class="card">
+      <h3>Aperitivo Mood</h3>
+      <p>Promo drink ogni giovedì.</p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="gallery">
+  <h2>Moods</h2>
+  <div class="carousel">
+    <div class="carousel-track">
+      <div class="slide"><img src="images/h1.png" alt="Highlight 1"></div>
+      <div class="slide"><img src="images/h2.png" alt="Highlight 2"></div>
+      <div class="slide"><img src="images/h3.png" alt="Highlight 3"></div>
+      <div class="slide"><img src="images/h4.png" alt="Highlight 4"></div>
+      <div class="slide"><img src="images/h5.png" alt="Highlight 5"></div>
+      <div class="slide"><img src="images/h6.png" alt="Highlight 6"></div>
+      <div class="slide"><img src="images/h7.png" alt="Highlight 7"></div>
+      <div class="slide"><img src="images/h8.png" alt="Highlight 8"></div>
+      <div class="slide"><img src="images/h9.png" alt="Highlight 9"></div>
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+</section>
+
+<section id="map">
+  <h2>Dove siamo</h2>
+
+  <iframe
+    src="https://www.google.com/maps?q=Mood+Bari&output=embed"
+    width="100%"
+    height="400"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy">
+  </iframe>
+
+</section>
+
+
+<section id="info-bottom" class="info-bottom">
+  <div class="hours-container">
+    <h2>Orari di apertura</h2>
+    <div class="hours-box">
+      <p><strong>Lunedì:</strong> 07:00 – 01:00</p>
+      <p><strong>Martedì:</strong> 07:00 – 01:00</p>
+      <p><strong>Mercoledì:</strong> 07:00 – 01:00</p>
+      <p><strong>Giovedì:</strong> 07:00 – 01:00</p>
+      <p><strong>Venerdì:</strong> 07:00 – 02:00</p>
+      <p><strong>Sabato:</strong> 08:00 – 02:00</p>
+      <p><strong>Domenica:</strong> 08:00 – 01:00</p>
+    </div>
+  </div>
+
+  <div class="contact-container">
+    <h2>Contatti</h2>
+    <p>Bari - Via Mazzitelli 252</p>
+    <p>Tel: 080 509 3266</p>
+    <p>Instagram: @mood_bari</p>
+  </div>
+</section>
+
+<footer>
+  Demo concept by Dali
+</footer>
+<script src="script.js"></script>
+<script>
+
+</script>
+
+</body>
+</html>

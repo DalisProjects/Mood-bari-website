@@ -1,0 +1,224 @@
+body {
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#0e0e0e;
+  color:white;
+}
+
+/* NAV */
+nav {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:black;
+  position:sticky;
+  top:0;
+}
+
+nav img {
+  height:40px;
+}
+
+nav a {
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
+}
+
+/* HERO */
+.hero {
+  height:90vh;
+  background:url("https://images.unsplash.com/photo-1514933651103-005eec06c04b") center/cover;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+.hero-content {
+  background:rgba(101, 117, 121, 0.5);
+  padding:20px;
+  border-radius:8px;
+}
+.hero h1 {
+  font-size:48px;
+  margin-bottom:10px;
+}
+
+.hero button {
+  padding:12px 25px;
+  border: 2px solid white;
+  background:white;
+  cursor:pointer;
+}
+
+/* SECTIONS */
+section {
+  padding:30px 40px;
+  max-width:1100px;
+  margin:auto;
+}
+
+h2 {
+  margin-bottom:20px;
+}
+
+/* EVENTS */
+.events {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card {
+  background:#1b1b1b;
+  padding:20px;
+  border-radius:8px;
+}
+
+/* GALLERY */
+.gallery img {
+  width:100%;
+  border-radius:8px;
+}
+
+/* FOOTER */
+footer {
+  text-align:center;
+  padding:30px;
+  background:black;
+}
+
+#map {
+  padding:60px 40px;
+  max-width:1100px;
+  margin:auto;
+}
+
+#map iframe {
+  border-radius:10px;
+}
+.gallery {
+  max-width: 400px;
+  margin: 40px auto;
+  text-align: center;
+}
+/* Highlights carousel styling stays the same, no changes needed */
+
+/* Bottom info: hours + contacts side by side on desktop, stacked on mobile */
+.info-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap; /* stacked on small screens */
+  max-width: 1100px;
+  margin: 60px auto;
+}
+
+.hours-container, .contact-container {
+  flex: 1 1 400px; /* responsive min width */
+  background: #1b1b1b;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.hours-container h2, .contact-container h2 {
+  margin-bottom: 15px;
+}
+
+.hours-container p, .contact-container p {
+  margin: 5px 0;
+}
+.gallery {
+  max-width: 100%;
+  padding: 40px 0;
+  background: #0e0e0e;
+  overflow: hidden;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 25%; /* adjust number of visible slides */
+  margin-left: 5%;
+  margin-right: 5%;
+  margin: 0 5px;  /* small gap between slides */
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.slide img {
+  width: 80%;
+  display: block;
+  filter: grayscale(100%);  /* fully black and white */
+  transform: scale(0.95);   /* slightly smaller by default */
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.slide:hover img {
+  filter: grayscale(0%);    /* full color on hover */
+  transform: scale(1);      /* normal size on hover */
+}
+
+/* Navigation buttons */
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Responsive: fewer slides on smaller screens */
+@media (max-width: 900px) {
+  .slide { min-width: 45%; }
+}
+
+@media (max-width: 500px) {
+  .slide { min-width: 90%; }
+}
+
+
+.background-video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;       /* behind all content */
+  overflow: hidden;
+  pointer-events: none; /* clicks pass through */
+}
+
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6) blur(3px); /* slight blur + darken for style */
+}
+
+.hero, nav {
+  position: relative; /* ensures nav/hero sit above video */
+  z-index: 1;
+}
