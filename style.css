@@ -1,6 +1,36 @@
+/* ---------- GLOBAL ---------- */
 html {
   scroll-behavior: smooth;
-}.brand {
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0e0e0e;
+  color: #fff;
+}
+
+/* ---------- NAVBAR ---------- */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  background: rgba(3, 8, 34, 0.104);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight:2000;
+  margin-left: 20px;
+}
+
+.brand {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -16,4 +46,196 @@ html {
   margin: 0;
   font-family: 'Inter', Arial, sans-serif;
   font-weight: 600;
-}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#0e0e0e;color:#fff}nav{display:flex;justify-content:space-between;align-items:center;padding:4px 40px;background:#240f0173;position:sticky;top:0}nav img{height:70px}nav a{color:#fff;text-decoration:none;margin-left:20px}.hero{height:90vh;background:url(https://images.unsplash.com/photo-1514933651103-005eec06c04b) center/cover;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}.hero-content{background:rgb(101 117 121 / .5);padding:20px;border-radius:8px}.hero h1{font-size:68px;margin-bottom:10px}.hero button{padding:12px 25px;border-radius:8px;border:4px solid #fff;background:#fff;cursor:pointer}section{padding:30px 40px;max-width:1100px;margin:auto}h2{margin-bottom:20px}.events{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}.card{background:#1b1b1b;padding:20px;border-radius:8px}.gallery img{width:100%;border-radius:8px}footer{text-align:center;padding:30px;background:#000}#map{padding:60px 40px;max-width:1100px;margin:auto}#map iframe{border-radius:10px}.gallery{max-width:400px;margin:40px auto;text-align:center}.info-bottom{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;max-width:1100px;margin:60px auto}.hours-container,.contact-container{flex:1 1 400px;background:#1b1b1b;padding:20px;border-radius:8px}.hours-container h2,.contact-container h2{margin-bottom:15px}.hours-container p,.contact-container p{margin:5px 0}.gallery{max-width:100%;padding:40px 0;background:#0e0e0e;overflow:hidden}.carousel{position:relative;overflow:hidden}.carousel-track{display:flex;transition:transform 0.5s ease-in-out}.slide{min-width:25%;margin-left:5%;margin-right:5%;margin:0 5px;overflow:hidden;border-radius:12px;cursor:pointer;flex-shrink:0;transition:transform 0.3s ease}.slide img{width:80%;display:block;filter:grayscale(100%);transform:scale(.95);transition:filter 0.3s ease,transform 0.3s ease}.slide:hover img{filter:grayscale(0%);transform:scale(1)}.carousel button{position:absolute;top:50%;transform:translateY(-50%);background:rgb(0 0 0 / .5);border:none;color:#fff;font-size:2rem;padding:0 12px;cursor:pointer;border-radius:5px;z-index:1}.prev{left:10px}.next{right:10px}@media (max-width:900px){.slide{min-width:45%}}@media (max-width:500px){.slide{min-width:90%}}.background-video-container{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;overflow:hidden;pointer-events:none}.background-video{width:100%;height:100%;object-fit:cover;filter:brightness(.6) blur(3px)}.hero,nav{position:relative;z-index:1}
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  height: 90vh;
+  margin-left: 0.3%;
+  margin-right: 0.3%;
+  background: url('images/cover.png') center/cover no-repeat;
+  display: flex;
+  border-radius: 3px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden; /* ensures overlay doesn't spill out */
+}
+
+
+.hero-content {
+  background: rgba(4, 14, 61, 0.13);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.hero h1 {
+  font-size: 68px;
+  margin-bottom: 10px;
+}
+
+.hero button {
+  padding: 12px 25px;
+  border-radius: 8px;
+  border: 4px solid #fff;
+  background: #fff;
+  cursor: pointer;
+}
+
+/* ---------- SECTIONS ---------- */
+section {
+  padding: 30px 40px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+/* ---------- EVENTS ---------- */
+.events {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #1d1d1d;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* ---------- GALLERY / SLIDER ---------- */
+.gallery {
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 12px;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* SLIDES FIX */
+.slide {
+  min-width: 25%;
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.slide img {
+  width: 100%;
+  height: 260px;          /* KEY FIX */
+  object-fit: cover;      /* same size, no distortion */
+  display: block;
+  filter: grayscale(80%);
+  transition: 0.3s;
+}
+.slide {
+  min-width: 25%; /* adjust number of visible slides */
+  margin-left: 5%;
+  margin-right: 5%;
+  margin: 0 5px;  /* small gap between slides */
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+.slide:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.03);
+}
+
+/* Slider arrows */
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgb(0 0 0 / .5);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  padding: 0 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .slide { min-width: 45%; }
+}
+
+@media (max-width: 500px) {
+  .slide { min-width: 90%; }
+}
+
+/* ---------- MAP ---------- */
+#map {
+  padding: 60px 40px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+#map iframe {
+  border-radius: 10px;
+}
+
+/* ---------- INFO SECTION ---------- */
+.info-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 60px auto;
+}
+
+.hours-container,
+.contact-container {
+  flex: 1 1 400px;
+  background: #1b1b1b;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #000;
+}
+
+/* ---------- BACKGROUND VIDEO ---------- */
+.background-video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(.6) blur(3px);
+}
