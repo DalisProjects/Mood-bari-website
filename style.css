@@ -179,8 +179,16 @@ h2 {
   height: 260px;          /* KEY FIX */
   object-fit: cover;      /* same size, no distortion */
   display: block;
-  filter: grayscale(80%);
-  transition: 0.3s;
+  filter: grayscale(70%) brightness(0.7);
+  transform: scale(0.9);
+  transition: all 0.4s ease;
+}
+
+
+/* center slide */
+.slide.active img {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1);
 }
 .slide {
   min-width: 25%; /* adjust number of visible slides */
@@ -249,7 +257,7 @@ h2 {
 .hours-container,
 .contact-container {
   flex: 1 1 400px;
-  background: #1b1b1b;
+  background: #1b1b1b52;
   padding: 20px;
   border-radius: 8px;
 }

@@ -9,6 +9,18 @@ const slides = Array.from(track.children);
 const prevButton = document.querySelector('.prev');
 const nextButton = document.querySelector('.next');
 let index = 0;
+const slidess = document.querySelectorAll('.slide');
+
+function updateSlides() {
+  slidess.forEach(s => s.classList.remove('active'));
+  slidess[index].classList.add('active');
+
+  index++;
+  if (index >= slidess.length) index = 0;
+}
+
+setInterval(updateSlides, 700);
+updateSlides();
 
 function updateCarousel() {
   const slideWidth = slides[0].getBoundingClientRect().width + 10; // include margin
@@ -29,7 +41,7 @@ prevButton.addEventListener('click', () => {
 setInterval(() => {
   index = (index + 1) % slides.length;
   updateCarousel();
-}, 1800);
+}, 3000);
 const toggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 
@@ -38,3 +50,4 @@ toggle.addEventListener('click', () => {
 });
 // Update carousel on resize
 window.addEventListener('resize', updateCarousel);
+
