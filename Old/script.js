@@ -29,7 +29,7 @@ prevButton.addEventListener('click', () => {
 setInterval(() => {
   index = (index + 1) % slides.length;
   updateCarousel();
-}, 6000);
+}, 1800);
 
 // Update carousel on resize
 window.addEventListener('resize', updateCarousel);

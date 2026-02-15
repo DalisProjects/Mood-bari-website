@@ -50,11 +50,12 @@ nav a {
 
 /* ---------- HERO ---------- */
 .hero {
-  height: 90vh;
+  height: 60vh;
   margin-left: 0.3%;
   margin-right: 0.3%;
   background: url('images/cover.png') center/cover no-repeat;
   display: flex;
+  opacity: 0.8;
   border-radius: 3px;
   justify-content: center;
   align-items: center;
